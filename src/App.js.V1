@@ -1,0 +1,20 @@
+import React, { Component } from 'react';
+import ParamsExample from './ParamsExample';
+import logProps from './logProps';
+import './App.css';
+
+class App extends Component {
+  render() {
+  	const ref = React.createRef();
+	const C = logProps(ParamsExample);
+	console.log(10, C);
+
+    return (
+      <div className="App">
+	  	<C />
+      </div>
+    );
+  }
+}
+
+export default App;

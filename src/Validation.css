@@ -1,0 +1,68 @@
+*, button {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+  outline: none;
+}
+
+html {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+input {
+  box-shadow: none;
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  width: 100%;
+}
+input:focus {
+  border-color: #9b59b6;
+}
+
+button {
+  margin: 1.5rem 0;
+  padding: 1rem 2rem;
+  background: #9b59b6;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  display: block;
+  cursor: pointer;
+}
+
+.error {
+  border: 1px solid #e74c3c;
+}
+
+p {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin: 0 0 1rem 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.FormFieldWithValidation {
+  margin-bottom: 1rem;
+}
+
+#app {
+  max-width: 400px;
+  margin: 2rem auto;
+}
+

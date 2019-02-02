@@ -1,0 +1,92 @@
+import React from 'react';
+
+const nameHoC = (WrappedComponent) => {
+    return class extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                name: ""
+            };
+        }
+
+        componentDidMount() {
+           //Here we can fetch the data by calling an API 
+           //and then set the state
+           //here I have used static data
+           this.setState({name: "Michael"});
+        }
+
+        render() {
+            const {name} = this.state;
+            return(
+                <div>
+                    <WrappedComponent{...this.props} name={name}/>
+                </div>
+            )
+        }
+    }
+};
+
+class WishMe extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const { name } = this.props;
+        return(
+            <div>
+                <h1>Hello {name}! Good morning</h1>
+            </div>
+        )
+    }
+}
+
+const hocofName = nameHoC(WishMe);
+
+const withWishesHoC = (WrappedComponent) => {
+    return class extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                message: ""
+            };
+        }
+
+        componentDidMount() {
+           //Here we can take the time
+           //and build the message according to time
+           //then set the state with message
+           //here I have used static data
+           this.setState({message: "Good morning"});
+        }
+
+        render() {
+            const { message } = this.state;
+            return(
+                <div>
+                    <WrappedComponent{...this.props} message={message}/>
+                </div>
+            )
+        }
+    }
+};
+
+class WishMe extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const { name, message } = this.props;
+        return(
+            <div>
+                <h1>Hello {name}! {message}</h1>
+            </div>
+        )
+    }
+}
+
+withWishesHoC(nameHoC(WishMe));
+
+
